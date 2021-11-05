@@ -23,7 +23,7 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  if (!apiServise.query.trim()) return console.log('пустая строка');
+  if (!apiServise.query.trim()) return alert('Надо что-нибудь ввести в строку поиска!');
   apiServise
     .fetchImages()
     .then(data => onMarkUp(data))
@@ -36,7 +36,7 @@ function onMarkUp(data) {
     const maxPageCount = Math.ceil(data.total / apiServise.perPage);
     refs.more.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
   } else {
-    console.log('No Hits');
+    адуке('Ни чего не найдено!');
   }
 }
 
