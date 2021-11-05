@@ -20,10 +20,7 @@ function onSearch(e) {
   apiServise.resetPage();
   clearMarkUp();
   if (!apiServise.query.trim()) return console.log('пустая строка');
-  apiServise.fetchArticles().then(data => {
-    console.log('Всего найдено:', data.total);
-    onMarkUp(data);
-  });
+  apiServise.fetchArticles().then(data => onMarkUp(data));
 }
 
 function onLoadMore() {
@@ -34,12 +31,8 @@ function onLoadMore() {
 function onMarkUp(data) {
   if (parseInt(data.hits.length) > 0) {
     refs.gallery.insertAdjacentHTML('beforeend', listCards(data.hits));
-    const maxPageCount = Math.ceil(data.total / 12);
-    if (apiServise.page <= maxPageCount) {
-      refs.more.style.display = 'block';
-    } else {
-      refs.more.style.display = 'none';
-    }
+    const maxPageCount = Math.ceil(data.total / apiServise.perPage);
+    refs.more.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
   } else {
     console.log('No Hits');
   }
