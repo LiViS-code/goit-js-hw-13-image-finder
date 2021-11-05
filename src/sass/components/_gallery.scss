@@ -1,10 +1,26 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 100%;
+  // flex-basis: 100%;
+  
 
   &__item {
     flex-basis: 100%;
     margin-bottom: $gap;
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc(100% / 2 - #{$gap});
+    &:nth-child(odd) {
+      margin-right: $gap;
+    }
   }
+  
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc(100% / 3 - #{$gap} * 2);
+    &:not(:nth-child(3n+3)) {
+      margin-right: $gap;
+    }
+  }
+}
 }

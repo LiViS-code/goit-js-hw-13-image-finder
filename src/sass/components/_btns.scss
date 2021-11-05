@@ -21,8 +21,8 @@
       &:hover,
       &:focus {
          cursor: pointer;
-         color: $bg-color;
-         background-color: $color;
+         color: $reverse-color;
+         background-color: $btn-bg-color;
       }
    }
 }
