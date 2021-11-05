@@ -14,9 +14,9 @@
   }
   
   @media screen and (min-width: $desktop) {
-    flex-basis: calc((100% - #{$gap} * 2) / 3);
+    flex-basis: calc((100% - #{$gap} * 3) / 4);
 
-    &:not(:nth-child(3n)) {
+    &:not(:nth-child(4n)) {
       margin-right: $gap;
     }
   }
