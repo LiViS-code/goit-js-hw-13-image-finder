@@ -19,11 +19,7 @@ function onSearch(e) {
   apiServise.query = e.currentTarget.elements.input.value;
   apiServise.resetPage();
   clearMarkUp();
-  if (!apiServise.query.trim()) return console.log('пустая строка');
-  apiServise
-    .fetchImages()
-    .then(data => onMarkUp(data))
-    .catch(data => alert(`Ошибка: ${data}`));
+  onLoadMore();
 }
 
 function onLoadMore() {
