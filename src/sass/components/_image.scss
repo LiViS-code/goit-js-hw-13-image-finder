@@ -1,5 +1,10 @@
 .image {
   display: block;
   min-width: 100%;
-  height: auto;
+  height: 100%;
+
+  @media screen and (min-width: $tablet) {
+    height: 250px;
+    object-fit: cover;
+  }
 }

@@ -5,20 +5,22 @@
   &__item {
     flex-basis: 100%;
     margin-bottom: $gap;
+    outline: 1px solid red;
+    
 
-  @media screen and (min-width: $tablet) {
-    flex-basis: calc((100% - #{$gap}) / 2);
-    &:nth-child(odd) {
-      margin-right: $gap;
+    @media screen and (min-width: $tablet) {
+      flex-basis: calc((100% - #{$gap}) / 2);
+      &:nth-child(odd) {
+        margin-right: $gap;
+      }
     }
-  }
   
-  @media screen and (min-width: $desktop) {
-    flex-basis: calc((100% - #{$gap} * 3) / 4);
+    @media screen and (min-width: $desktop) {
+      flex-basis: calc((100% - #{$gap} * 3) / 4);
 
-    &:not(:nth-child(4n)) {
-      margin-right: $gap;
+      &:not(:nth-child(4n)) {
+        margin-right: $gap;
+      }
     }
-  }
 }
 }
