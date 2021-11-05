@@ -36,7 +36,7 @@ function onMarkUp(data) {
     const maxPageCount = Math.ceil(data.total / apiServise.perPage);
     refs.more.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
   } else {
-    адуке('Ни чего не найдено!');
+    alert('Ни чего не найдено!');
   }
 }
 
