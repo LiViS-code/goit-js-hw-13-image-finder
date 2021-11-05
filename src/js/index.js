@@ -20,12 +20,18 @@ function onSearch(e) {
   apiServise.resetPage();
   clearMarkUp();
   if (!apiServise.query.trim()) return console.log('пустая строка');
-  apiServise.fetchArticles().then(data => onMarkUp(data));
+  apiServise
+    .fetchImages()
+    .then(data => onMarkUp(data))
+    .catch(data => alert(`Ошибка: ${data}`));
 }
 
 function onLoadMore() {
   if (!apiServise.query.trim()) return console.log('пустая строка');
-  apiServise.fetchArticles().then(data => onMarkUp(data));
+  apiServise
+    .fetchImages()
+    .then(data => onMarkUp(data))
+    .catch(data => alert(`Ошибка: ${data}`));
 }
 
 function onMarkUp(data) {

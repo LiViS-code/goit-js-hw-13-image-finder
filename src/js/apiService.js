@@ -6,9 +6,8 @@ export default class PixabayApiServise {
     this.API_KEY = '24165340-8b0e7a7ee772979b6a936f118';
   }
 
-  fetchArticles = async () => {
+  fetchImages = async () => {
     const URL = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.sQuery}&page=${this.pageNum}&per_page=${this.perPage}&key=${this.API_KEY}`;
-
     const response = await fetch(URL);
     const data = response.json();
     this.incrementPage();
