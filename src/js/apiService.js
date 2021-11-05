@@ -11,7 +11,6 @@ export default class PixabayApiServise {
 
     const response = await fetch(URL);
     const data = response.json();
-    console.log(data);
     this.incrementPage();
     return data;
   };
@@ -30,5 +29,9 @@ export default class PixabayApiServise {
 
   set query(newQuery) {
     return (this.sQuery = newQuery);
+  }
+
+  get page() {
+    return this.pageNum;
   }
 }
