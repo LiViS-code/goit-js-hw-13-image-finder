@@ -1,5 +1,6 @@
 .main-container {
   background-color: $bg-color;
+  padding: $gap 0;
 }
 
 .cards-container {
@@ -18,11 +19,13 @@
   padding: $gap / 4 $gap / 2;
   justify-content: flex-end;
   opacity: 0;
+  font-size: 10px;
   color: $color;
   transform: translate3d(0, 100%, 0);
   background-color: rgba(255, 255, 0, 0.4);
   transition: transform $time $time-func,
     opacity $time $time-func;
+
 
   &-item:not(:last-child) {
     margin-right: $gap;

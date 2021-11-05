@@ -8,7 +8,7 @@
     flex-basis: 100%;
     margin-bottom: $gap;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet + 120) {
     flex-basis: calc(100% / 2 - #{$gap});
     &:nth-child(odd) {
       margin-right: $gap;
