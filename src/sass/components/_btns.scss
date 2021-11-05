@@ -10,11 +10,12 @@
       display: none;
       margin: 0 auto;
       padding: $gap / 4 $gap;
+      font-size: $font-size;
    }
 
    &__search,
    &__more {
-      color: $color;
+      color: $btn-bg-color;
       transition: color $time $time-func,
          background-color $time $time-func;
 
