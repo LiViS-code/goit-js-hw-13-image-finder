@@ -33,7 +33,7 @@ function onLoadMore() {
 function onMarkUp(data) {
   if (parseInt(data.hits.length) > 0) {
     refs.gallery.insertAdjacentHTML('beforeend', listCards(data.hits));
-    const maxPageCount = Math.ceil(data.total / apiServise.perPage);
+    const maxPageCount = Math.ceil(data.total / apiServise.pPage);
     refs.more.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
   } else {
     alert('Ни чего не найдено!');

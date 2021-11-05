@@ -33,4 +33,16 @@ export default class PixabayApiServise {
   get page() {
     return this.pageNum;
   }
+
+  set page(newPage) {
+    return (this.perPage = newPage);
+  }
+
+  get pPage() {
+    return this.perPage;
+  }
+
+  set pPage(newPerPage) {
+    return (this.perPage = newPerPage);
+  }
 }
