@@ -28,7 +28,7 @@
 
 
   &-item:not(:last-child) {
-    margin-right: $gap;
+    margin-right: $gap / 2;
   }
 
   .image:hover + &,
