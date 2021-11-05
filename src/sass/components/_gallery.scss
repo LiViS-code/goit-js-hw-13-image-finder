@@ -6,16 +6,17 @@
     flex-basis: 100%;
     margin-bottom: $gap;
 
-  @media screen and (min-width: $tablet + 120) {
-    flex-basis: calc(100% / 2 - #{$gap});
+  @media screen and (min-width: $tablet + 120) and (max-width: $desktop - 1){
+    flex-basis: calc((100% - #{$gap}) / 2);
     &:nth-child(odd) {
       margin-right: $gap;
     }
   }
   
   @media screen and (min-width: $desktop) {
-    flex-basis: calc(100% / 3 - #{$gap} * 2);
-    &:not(:nth-child(3n+3)) {
+    flex-basis: calc((100% - #{$gap} * 2) / 3);
+
+    &:not(:nth-child(3n)) {
       margin-right: $gap;
     }
   }
