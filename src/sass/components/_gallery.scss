@@ -1,0 +1,10 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+
+  &__item {
+    flex-basis: 100%;
+    margin-bottom: $gap;
+  }
+}

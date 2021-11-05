@@ -1,0 +1,28 @@
+.btn {
+   border-radius: $b-radius;
+
+   &__search {
+      width: 45px;
+      height: 45px;
+   }
+   
+   &__more {
+      display: none;
+      margin: 0 auto;
+      padding: $gap / 4 $gap;
+   }
+
+   &__search,
+   &__more {
+      color: $color;
+      transition: color $time $time-func,
+         background-color $time $time-func;
+
+      &:hover,
+      &:focus {
+         cursor: pointer;
+         color: $bg-color;
+         background-color: $color;
+      }
+   }
+}
