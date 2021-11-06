@@ -13,6 +13,7 @@ const refs = {
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.more.addEventListener('click', onLoadMore);
+refs.gallery.addEventListener('click', showLargeImg);
 
 function onSearch(e) {
   e.preventDefault();
@@ -43,4 +44,8 @@ function onMarkUp(data) {
 function clearMarkUp() {
   refs.gallery.innerHTML = '';
   refs.more.style.display = 'none';
+}
+
+function showLargeImg(e) {
+  console.log(e.target);
 }
