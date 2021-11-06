@@ -5,6 +5,10 @@
   &__item {
     flex-basis: 100%;
     margin-bottom: $gap; 
+    background-color: $color;
+    padding: $gap / 3;
+    border: 1px solid $border-color;
+    border-radius: $b-radius;
     
     @media screen and (min-width: $tablet) and (max-width: ($laptop - 1)) {
       flex-basis: calc((100% - #{$gap}) / 2);

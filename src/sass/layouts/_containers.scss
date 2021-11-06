@@ -21,6 +21,8 @@
   opacity: 0;
   font-size: 10px;
   color: $color;
+  border-bottom-left-radius: $b-radius;
+  border-bottom-right-radius: $b-radius;
   transform: translate3d(0, 100%, 0);
   background-color: $bg-color-op;
   transition: transform $time $time-func,
