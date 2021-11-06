@@ -4,13 +4,18 @@
 
   &__item {
     flex-basis: 100%;
-    margin-bottom: $gap;
-    outline: 1px solid red;
+    margin-bottom: $gap; 
     
-
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $tablet) and (max-width: ($laptop - 1)) {
       flex-basis: calc((100% - #{$gap}) / 2);
       &:nth-child(odd) {
+        margin-right: $gap;
+      }
+    }
+
+    @media screen and (min-width: $laptop) and (max-width: ($desktop - 1)){
+      flex-basis: calc((100% - #{$gap} * 2) / 3);
+      &:not(:nth-child(3n)) {
         margin-right: $gap;
       }
     }
@@ -22,5 +27,5 @@
         margin-right: $gap;
       }
     }
-}
+  }
 }
