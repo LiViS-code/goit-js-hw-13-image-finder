@@ -1,6 +1,5 @@
 .link-large {
-  &:hover + .stats,
-  &:focus + .stats{
+  &:hover + .stats {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
