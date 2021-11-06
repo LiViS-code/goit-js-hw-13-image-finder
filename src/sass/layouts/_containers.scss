@@ -33,9 +33,5 @@
     margin-right: $gap / 2;
   }
 
-  .image:hover + &,
-  .image:focus + &{
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+  
 }
