@@ -1,31 +1,30 @@
-<ul class="gallery">
-  {{#each this}}
-  <li class="gallery__item">
-    <div class="photo-card">
-      <img class="image" src="{{previewURL}}" alt="{{tags}}" width="{{previewWidth}}" height="{{previewHeight}}">
 
-      <div class="stats">
-        <p class="stats-item">
-          <i class="material-icons">thumb_up</i>
-          {{likes}}
-        </p>
+{{#each this}}
+<li class="gallery__item">
+  <div class="photo-card">
+    <img class="image" src="{{previewURL}}" alt="{{tags}}" width="{{previewWidth}}" height="{{previewHeight}}">
 
-        <p class="stats-item">
-          <i class="material-icons">visibility</i>
-          {{views}}
-        </p>
+    <div class="stats">
+      <p class="stats-item">
+        <i class="material-icons">thumb_up</i>
+        {{likes}}
+      </p>
 
-        <p class="stats-item">
-          <i class="material-icons">comment</i>
-          {{comments}}
-        </p>
+      <p class="stats-item">
+        <i class="material-icons">visibility</i>
+        {{views}}
+      </p>
 
-        <p class="stats-item">
-          <i class="material-icons">cloud_download</i>
-          {{downloads}}
-        </p>
-      </div>
+      <p class="stats-item">
+        <i class="material-icons">comment</i>
+        {{comments}}
+      </p>
+
+      <p class="stats-item">
+        <i class="material-icons">cloud_download</i>
+        {{downloads}}
+      </p>
     </div>
-  </li>
-  {{/each}}
-</ul>
+  </div>
+</li>
+{{/each}}
