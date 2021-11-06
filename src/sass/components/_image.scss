@@ -6,12 +6,11 @@
 
   @media screen and (min-width: $tablet) {
     height: 180px;
-    object-fit: cover;
+    object-fit:cover;
   }
 
   @media screen and (min-width: $laptop) {
     height: 200px;
-    object-fit: cover;
   }
 
   transition: transform $time $time-func,

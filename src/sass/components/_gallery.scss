@@ -31,5 +31,10 @@
         margin-right: $gap;
       }
     }
+
+    &:hover,
+    &:focus {
+      border-color: greenyellow;
+    }
   }
 }
