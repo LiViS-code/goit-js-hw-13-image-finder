@@ -2,7 +2,7 @@
   display: block;
   min-width: 100%;
   height: 100%;
-  border-radius: $b-radius;
+  border-radius: 50%;
 
   @media screen and (min-width: $tablet) {
     height: 180px;
@@ -14,10 +14,12 @@
   }
 
   transition: transform $time $time-func,
-  opacity $time $time-func;
+  opacity $time $time-func,
+  border-radius $time $time-func;
 
   &:hover,
   &:focus {
+    border-radius: $b-radius;
     opacity: 0.8;
     transform: scale3d(1.03, 1.05, 1);
   }
