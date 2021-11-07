@@ -32,4 +32,9 @@
   &-item:not(:last-child) {
     margin-right: $gap / 2;
   }
+
+  .image:hover + & {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
