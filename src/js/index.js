@@ -55,7 +55,7 @@ function clearMarkUp() {
 
 function showLargeImg(e) {
   if (!e.target.dataset.src) return;
-  refs.modal.style.display = 'block';
+  refs.modal.style.display = 'flex';
   setAttrImg(e.target.dataset.src, e.target.alt, 'show');
 }
 
