@@ -10,7 +10,6 @@ const refs = {
   gallery: document.getElementById('cards-js'),
   more: document.getElementById('more'),
   modal: document.getElementById('modal-js'),
-  body: document.querySelector('body'),
   largeImg: document.querySelector('.image-large'),
 };
 
