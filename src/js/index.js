@@ -9,11 +9,18 @@ const refs = {
   searchForm: document.getElementById('search-form'),
   gallery: document.getElementById('cards-js'),
   more: document.getElementById('more'),
+  modal: document.getElementById('modal-js'),
+  body: document.querySelector('body'),
+  largeImg: document.querySelector('.image-large'),
 };
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.more.addEventListener('click', onLoadMore);
 refs.gallery.addEventListener('click', showLargeImg);
+refs.modal.addEventListener('click', () => {
+  refs.modal.style.display = 'none';
+  setAttrImg('', '', 'hidden');
+});
 
 function onSearch(e) {
   e.preventDefault();
@@ -25,6 +32,7 @@ function onSearch(e) {
 
 function onLoadMore() {
   if (!apiServise.query.trim()) return alert('Надо что-нибудь ввести в строку поиска!');
+  console.log('искать еще, запрос:', apiServise.query);
   apiServise
     .fetchImages()
     .then(data => onMarkUp(data))
@@ -47,5 +55,15 @@ function clearMarkUp() {
 }
 
 function showLargeImg(e) {
-  console.log(e.target);
+  if (!e.target.dataset.src) return;
+  refs.modal.style.display = 'block';
+  setAttrImg(e.target.dataset.src, e.target.alt, 'show');
+}
+
+function setAttrImg(src, alt, status) {
+  refs.largeImg.src = src;
+  refs.largeImg.alt = alt;
+  if (status === 'show') refs.largeImg.classList.add('js-show');
+  else refs.largeImg.classList.remove('js-show');
+  return;
 }

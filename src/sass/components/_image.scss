@@ -19,6 +19,7 @@
 
   &:hover,
   &:focus {
+    cursor: zoom-in;
     border-radius: $b-radius;
     opacity: 0.8;
     transform: scale3d(1.03, 1.05, 1);

@@ -1,0 +1,14 @@
+.image-large {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform $time $time-func,
+    opacity $time $time-func;
+
+  &.js-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
