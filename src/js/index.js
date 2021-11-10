@@ -129,6 +129,6 @@ function setAttrImg(src, alt, status) {
 }
 
 function scrollPage() {
-  // Прокрутка на один экран вертикально вниз.
-  window.scrollBy(0, innerHeight);
+  // прокрутить экран до последнего ряда с картинками
+  refs.gallery.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 }
