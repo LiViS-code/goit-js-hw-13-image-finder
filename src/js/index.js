@@ -105,8 +105,11 @@ function onMarkUp(data) {
   }
   if (refs.btnSearch.hasAttribute('disabled')) refs.btnSearch.removeAttribute('disabled');
   if (refs.more.hasAttribute('disabled')) refs.more.removeAttribute('disabled');
-  spinner.stop();
-  spinnerMore.stop();
+  window.onload = (function () {
+    spinner.stop();
+    spinnerMore.stop();
+  })();
+
   scrollPage();
 }
 
