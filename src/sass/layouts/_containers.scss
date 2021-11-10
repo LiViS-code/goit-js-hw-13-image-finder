@@ -5,6 +5,7 @@
 }
 
 .cards-container {
+  position: relative;
   padding: $gap;
 }
 
@@ -38,4 +39,8 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+.btn-container {
+  position: relative;
 }

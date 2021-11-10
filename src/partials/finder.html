@@ -1,5 +1,6 @@
 <div class="main-container">
   <h1 class="title">Поиск изображений</h1>
+
   <form class="search-form" id="search-form">
     <input
       class="search-form__input"
@@ -9,15 +10,23 @@
       placeholder="Найти картинку..."
       id="input"
     />
+
     <button class="btn btn__search" id="search" type="submit">
       <span class="material-icons"> image_search </span>
     </button>
   </form>
+
   <div class="cards-container">
+    <span id="spin"></span>
     <ul class="gallery" id="cards-js"></ul>
+
+    <div class="btn-container">
+      <button class="btn btn__more" id="more" type="button">Загрузить ещё ...</button>
+      <span id="spinMore"></span>
+    </div>
   </div>
-  <button class="btn btn__more" id="more" type="button">Загрузить ещё ...</button>
-  <div class="modal" id="modal-js">
+
+  <div class="modal is-hidden" id="modal-js">
     <img class="image-large" src="" alt="" />
   </div>
 </div>

@@ -8,11 +8,18 @@
    
    &__more {
       display: none;
+      position: relative;
       margin: 0 auto;
       padding: $gap / 4 $gap;
       font-size: $font-size;
    }
 
+   &__search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   
    &__search,
    &__more {
       color: $btn-bg-color;
