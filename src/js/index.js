@@ -129,6 +129,9 @@ function setAttrImg(src, alt, status) {
 }
 
 function scrollPage() {
-  // прокрутить на один экран вниз
-  window.scrollBy(0, window.innerHeight);
+  const refGalleryItem = document.querySelectorAll('.gallery__item');
+  refGalleryItem[refGalleryItem.length - (apiServise.pPage - 1)].scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 }
