@@ -105,10 +105,8 @@ function onMarkUp(data) {
   }
   if (refs.btnSearch.hasAttribute('disabled')) refs.btnSearch.removeAttribute('disabled');
   if (refs.more.hasAttribute('disabled')) refs.more.removeAttribute('disabled');
-  window.onload = () => {
-    spinner.stop();
-    spinnerMore.stop();
-  };
+  spinner.stop();
+  spinnerMore.stop();
 }
 
 function clearMarkUp() {
