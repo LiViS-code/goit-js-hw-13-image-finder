@@ -82,7 +82,7 @@ function onSearch(e) {
 }
 
 const onLoad = async () => {
-  return apiServise
+  apiServise
     .fetchImages()
     .then(data => onMarkUp(data))
     .catch(data => alert(`Ошибка: ${data}`));
@@ -91,7 +91,7 @@ const onLoad = async () => {
 function onLoadMore() {
   spinnerMore.spin(refs.spinMore);
   refs.more.setAttribute('disabled', 'disabled');
-  return onLoad();
+  onLoad();
 }
 
 function onMarkUp(data) {
@@ -107,6 +107,7 @@ function onMarkUp(data) {
   if (refs.more.hasAttribute('disabled')) refs.more.removeAttribute('disabled');
   spinner.stop();
   spinnerMore.stop();
+  scrollPage();
 }
 
 function clearMarkUp() {
@@ -125,4 +126,9 @@ function setAttrImg(src, alt, status) {
   refs.largeImg.alt = alt;
   if (status === 'show') refs.largeImg.classList.add('js-show');
   else refs.largeImg.classList.remove('js-show');
+}
+
+function scrollPage() {
+  // Прокрутка на один экран вертикально вниз.
+  window.scrollBy(0, innerHeight);
 }
