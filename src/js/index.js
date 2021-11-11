@@ -24,7 +24,6 @@ const opts = {
   className: 'spinner', // The CSS class to assign to the spinner
   position: 'absolute', // Element positioning,
 };
-
 const optsMore = {
   lines: 10, // The number of lines to draw
   length: 25, // The length of each line
@@ -45,7 +44,6 @@ const optsMore = {
   className: 'spinner', // The CSS class to assign to the spinner
   position: 'absolute', // Element positioning,
 };
-
 const optsModal = {
   lines: 10, // The number of lines to draw
   length: 25, // The length of each line
@@ -144,11 +142,11 @@ function onMarkUp(data) {
   } else {
     alert('Ни чего не найдено!');
   }
+
   if (refs.btnSearch.hasAttribute('disabled')) refs.btnSearch.removeAttribute('disabled');
   if (refs.more.hasAttribute('disabled')) refs.more.removeAttribute('disabled');
+
   waitingForLoading();
-  // spinner.stop();
-  // spinnerMore.stop();
   scrollPage();
 }
 
@@ -159,23 +157,29 @@ function clearMarkUp() {
 
 function showLargeImg(e) {
   if (!e.target.dataset.src) return;
+
   refs.modal.classList.remove('is-hidden');
   spinnerModal.spin(spinModal);
+  const refImgLarge = document.querySelector('.image-large');
+
   setAttrImg(e.target.dataset.src, e.target.alt, 'show');
-  window.onload = (() => {
+
+  refImgLarge.addEventListener('load', () => {
     spinnerModal.stop();
-  })();
+  });
 }
 
 function setAttrImg(src, alt, status) {
   refs.largeImg.src = src;
   refs.largeImg.alt = alt;
+
   if (status === 'show') refs.largeImg.classList.add('js-show');
   else refs.largeImg.classList.remove('js-show');
 }
 
 function scrollPage() {
   const refGalleryItem = document.querySelectorAll('.gallery__item');
+
   if (refGalleryItem.length > apiServise.pPage) {
     refGalleryItem[refGalleryItem.length - apiServise.pPage].scrollIntoView({
       behavior: 'smooth',
