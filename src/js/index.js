@@ -17,7 +17,7 @@ const opts = {
   direction: 1, // 1: clockwise, -1: counterclockwise
   color: '#e03e3e', // CSS color or array of colors
   fadeColor: 'transparent', // CSS color or array of colors
-  top: '200px', // Top position relative to parent
+  top: '40vh', // Top position relative to parent
   left: '50%', // Left position relative to parent
   shadow: '0 0 1px transparent', // Box-shadow for the lines
   zIndex: 100, // The z-index (defaults to 2e9)
@@ -37,14 +37,14 @@ const optsMore = {
   direction: 1, // 1: clockwise, -1: counterclockwise
   color: '#e03e3e', // CSS color or array of colors
   fadeColor: 'transparent', // CSS color or array of colors
-  top: '-200px', // Top position relative to parent
+  top: '-50vh', // Top position relative to parent
   left: '50%', // Left position relative to parent
   shadow: '0 0 1px transparent', // Box-shadow for the lines
   zIndex: 100, // The z-index (defaults to 2e9)
   className: 'spinner', // The CSS class to assign to the spinner
   position: 'absolute', // Element positioning,
 };
-const optsModal = {
+const optsBackdrop = {
   lines: 10, // The number of lines to draw
   length: 25, // The length of each line
   width: 12, // The line thickness
@@ -70,26 +70,26 @@ const apiServise = new PixabayApiServise();
 const refs = {
   searchForm: document.getElementById('search-form'),
   gallery: document.getElementById('cards-js'),
-  more: document.getElementById('more'),
-  modal: document.getElementById('modal-js'),
+  btnMore: document.getElementById('btn-more'),
+  backdrop: document.getElementById('backdrop-js'),
   largeImg: document.querySelector('.image-large'),
-  btnSearch: document.getElementById('search'),
+  btnSearch: document.getElementById('btn-search'),
   spin: document.getElementById('spin'),
   spinMore: document.getElementById('spinMore'),
-  spinModal: document.getElementById('spinModal'),
+  spinBackdrop: document.getElementById('spinBackdrop'),
 };
 
 const spinner = new Spinner(opts);
 const spinnerMore = new Spinner(optsMore);
-const spinnerModal = new Spinner(optsModal);
+const spinnerBackdrop = new Spinner(optsBackdrop);
 
 refs.searchForm.addEventListener('submit', onSearch);
-refs.more.addEventListener('click', onLoadMore);
+refs.btnMore.addEventListener('click', onLoadMore);
 refs.gallery.addEventListener('click', showLargeImg);
-refs.modal.addEventListener('click', hideModal);
+refs.backdrop.addEventListener('click', hideBackdrop);
 
-function hideModal() {
-  refs.modal.classList.add('is-hidden');
+function hideBackdrop() {
+  refs.backdrop.classList.add('is-hidden');
   setAttrImg('', '', 'hidden');
 }
 
@@ -130,7 +130,7 @@ const onLoad = async () => {
 
 function onLoadMore() {
   spinnerMore.spin(refs.spinMore);
-  refs.more.setAttribute('disabled', 'disabled');
+  refs.btnMore.setAttribute('disabled', 'disabled');
   onLoad();
 }
 
@@ -138,13 +138,13 @@ function onMarkUp(data) {
   if (parseInt(data.hits.length) > 0) {
     refs.gallery.insertAdjacentHTML('beforeend', listCards(data.hits));
     const maxPageCount = Math.ceil(data.total / apiServise.pPage);
-    refs.more.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
+    refs.btnMore.style.display = apiServise.page <= maxPageCount ? 'block' : 'none';
   } else {
     alert('Ни чего не найдено!');
   }
 
   if (refs.btnSearch.hasAttribute('disabled')) refs.btnSearch.removeAttribute('disabled');
-  if (refs.more.hasAttribute('disabled')) refs.more.removeAttribute('disabled');
+  if (refs.btnMore.hasAttribute('disabled')) refs.btnMore.removeAttribute('disabled');
 
   waitingForLoading();
   scrollPage();
@@ -152,20 +152,20 @@ function onMarkUp(data) {
 
 function clearMarkUp() {
   refs.gallery.innerHTML = '';
-  refs.more.style.display = 'none';
+  refs.btnMore.style.display = 'none';
 }
 
 function showLargeImg(e) {
   if (!e.target.dataset.src) return;
 
-  refs.modal.classList.remove('is-hidden');
-  spinnerModal.spin(spinModal);
+  refs.backdrop.classList.remove('is-hidden');
+  spinnerBackdrop.spin(refs.spinBackdrop);
   const refImgLarge = document.querySelector('.image-large');
 
   setAttrImg(e.target.dataset.src, e.target.alt, 'show');
 
   refImgLarge.addEventListener('load', () => {
-    spinnerModal.stop();
+    spinnerBackdrop.stop();
   });
 }
 
