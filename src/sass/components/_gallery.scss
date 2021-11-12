@@ -5,9 +5,12 @@
   &__item {
     flex-basis: 100%;
     margin-bottom: $gap; 
-    background-color: $color;
     padding: $gap / 3;
     border: 1px solid $border-color;
+    background-image: $bg-image;
+    background-color: $bg-img-color;
+    background-size: 1em 1em;
+    font-size: 12px;
     border-radius: $b-radius;
     
     @media screen and (min-width: $tablet) and (max-width: ($laptop - 1)) {
@@ -34,7 +37,7 @@
 
     &:hover,
     &:focus {
-      border-color: greenyellow;
+      border-color: $border-color-select;
     }
   }
 }
