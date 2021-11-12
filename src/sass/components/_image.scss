@@ -3,7 +3,7 @@
   opacity: 0;
   min-width: 100%;
   transform: scale(0.5);
-  border-radius: $b-radius;
+  border-radius: 50%;
   transition: transform $time $time-func,
     opacity $time $time-func;
 
@@ -21,13 +21,15 @@
   }
 
   transition: transform $time $time-func,
-  opacity $time $time-func;
+  opacity $time $time-func,
+  border-radius $time $time-func;
 
   &:hover,
   &:focus {
     cursor: zoom-in;
     opacity: 0.8;
     transform: scale3d(1.03, 1.05, 1);
+    border-radius: $b-radius;
   }
 
   &.show {
